@@ -1,0 +1,40 @@
+FlatCollision License
+Copyright (c) 2026 Dripps (also known as dripps., poosmacker135, poosmacker)
+
+1. ALL RIGHTS RESERVED
+   Unless explicitly stated otherwise in this license, all rights to the "FlatCollision" software, 
+   source code, and compiled binaries (JAR files) are reserved by the Copyright Holder.
+
+2. USAGE
+   You are granted a limited, non-exclusive license to:
+   - Download the compiled binary (JAR) from official sources approved by the Copyright Holder 
+     (e.g., Modrinth, CurseForge, GitHub Releases).
+   - Install and use the software for personal gameplay on client or server instances.
+
+3. REDISTRIBUTION
+   - You MAY NOT redistribute the compiled binary (JAR) or the source code on any platform, 
+     website, or service (e.g., you cannot re-upload this mod to 3rd party sites).
+   - You MAY NOT include the compiled binary directly in modpacks. Modpacks must link to 
+     the official download sources or use official platform dependency systems 
+     (e.g., Modrinth/CurseForge modpack systems that download the file for the user).
+
+4. CODE MODIFICATION AND DERIVATIVE WORKS
+   - You MAY NOT copy portions of the source code for use in other public projects, 
+     software, or mods without explicit written permission.
+   - You MAY NOT create public forks or derivative works of this project, except as 
+     outlined in Section 5.
+
+5. CONTRIBUTION (PULL REQUESTS)
+   - You ARE allowed to fork the repository for the sole purpose of creating Pull Requests (PRs) 
+     to the official "FlatCollision" repository.
+   - By submitting a Pull Request, you agree that your contribution becomes the property of 
+     the Copyright Holder, or that you grant the Copyright Holder an unlimited, irrevocable 
+     license to use, modify, and distribute your contribution as part of the project.
+
+6. DISCLAIMER
+   THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, 
+   INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR 
+   PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE 
+   FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR 
+   OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER 
+   DEALINGS IN THE SOFTWARE.

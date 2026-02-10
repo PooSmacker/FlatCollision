@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "flatcollision",
+  "version": "${version}",
+  "name": "FlatCollision",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/flatcollision/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "com.dripps.flatcollision.client.FlatcollisionDataGenerator"
+    ],
+    "client": [
+      "com.dripps.flatcollision.client.FlatcollisionClient"
+    ],
+    "main": [
+      "com.dripps.flatcollision.Flatcollision"
+    ]
+  },
+  "mixins": [
+    "flatcollision.mixins.json",
+    {
+      "config": "flatcollision.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
