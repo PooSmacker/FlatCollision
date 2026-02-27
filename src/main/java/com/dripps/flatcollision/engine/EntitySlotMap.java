@@ -1,10 +1,8 @@
 package com.dripps.flatcollision.engine;
 
+import it.unimi.dsi.fastutil.ints.Int2IntOpenHashMap;
 import net.minecraft.entity.Entity;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  * bidirectional mapping between entity IDs and dense SoA slot indices.
@@ -14,8 +12,11 @@ public final class EntitySlotMap {
 
     private static final int INITIAL_CAPACITY = 1024;
 
-    /** sparse entity id to slot index map */
-    private final Map<Integer, Integer> entityIdToSlot = new HashMap<>();
+    /** sentinel value for missing entries in int map */
+    private static final int MISSING = -1;
+
+    /** sparse entity id to slot index map, no autoboxing */
+    private final Int2IntOpenHashMap entityIdToSlot = new Int2IntOpenHashMap();
 
     /** dense slot index to entity reference array */
     private Entity[] slotToEntity;
@@ -29,6 +30,7 @@ public final class EntitySlotMap {
         this.data = data;
         this.slotToEntity = new Entity[INITIAL_CAPACITY];
         this.activeCount = 0;
+        entityIdToSlot.defaultReturnValue(MISSING);
     }
 
     public int activeCount() {
@@ -37,14 +39,12 @@ public final class EntitySlotMap {
 
     /** returns slot index for entity or -1 if not tracked */
     public int getSlot(Entity entity) {
-        Integer slot = entityIdToSlot.get(entity.getId());
-        return slot != null ? slot : -1;
+        return entityIdToSlot.get(entity.getId());
     }
 
     /** returns slot index for entity id or -1 if not tracked */
     public int getSlot(int entityId) {
-        Integer slot = entityIdToSlot.get(entityId);
-        return slot != null ? slot : -1;
+        return entityIdToSlot.get(entityId);
     }
 
     /** returns entity reference at slot */
@@ -83,10 +83,8 @@ public final class EntitySlotMap {
      * vacated slot. returns freed slot index or -1 if not tracked.
      */
     public int free(Entity entity) {
-        Integer removedSlotObj = entityIdToSlot.remove(entity.getId());
-        if (removedSlotObj == null) return -1;
-
-        int removedSlot = removedSlotObj;
+        int removedSlot = entityIdToSlot.remove(entity.getId());
+        if (removedSlot == MISSING) return -1;
         int lastSlot = activeCount - 1;
 
         if (removedSlot != lastSlot) {

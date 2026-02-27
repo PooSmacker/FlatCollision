@@ -71,10 +71,11 @@ public final class FlatParticleEngine {
 
         if (world != null) {
             final ClientWorld w = world;
+            final BlockPos.Mutable mutablePos = new BlockPos.Mutable();
             sectorGrid.batchCollideBlocks((x, y, z) -> {
-                BlockPos pos = BlockPos.ofFloored(x, y, z);
-                BlockState state = w.getBlockState(pos);
-                return !state.isAir() && state.isFullCube(w, pos);
+                mutablePos.set((int) Math.floor(x), (int) Math.floor(y), (int) Math.floor(z));
+                BlockState state = w.getBlockState(mutablePos);
+                return !state.isAir() && state.isFullCube(w, mutablePos);
             });
         }
     }

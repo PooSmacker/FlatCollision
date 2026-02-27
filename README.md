@@ -33,6 +33,8 @@ benchmarks from server scenarios:
 - **swap and pop**: dense storage with no gaps, maintains iteration speed
 - **zero gc particles**: fixed size ring buffers, old particles overwritten instead of collected
 - **async safe staging**: lock free queue for entities loaded from background threads
+- **primitive int maps**: fastutil Int2IntOpenHashMap for entity to slot mapping, zero autoboxing on hot paths
+- **mutable block positions**: reusable BlockPos for particle collision checks, no per particle allocation
 
 ## compatibility
 
