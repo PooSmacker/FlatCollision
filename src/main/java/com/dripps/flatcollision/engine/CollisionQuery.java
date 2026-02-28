@@ -98,7 +98,7 @@ public final class CollisionQuery {
 
             Entity e = slotMap.getEntity(slot);
             if (e == null || e.getId() == querierId) continue;
-            if (!e.isCollidable(querier)) continue;
+            if (!e.isCollidable()) continue;
 
             if (querier != null) {
                 shapes.add(VoxelShapes.cuboid(e.getBoundingBox()));
